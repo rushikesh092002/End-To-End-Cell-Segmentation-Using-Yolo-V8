@@ -24,16 +24,81 @@ This project provides an end-to-end pipeline for detecting and segmenting cells 
 
 ## 📂 Project Structure
 
+```text
 End-To-End-Cell-Segmentation-YOLOv8/
-├── data/ # Training and validation data
-│ ├── images/
-│ └── labels/
-├── runs/ # YOLOv8 training outputs
-├── yolov8_custom.yaml # Dataset configuration
-├── train.py # Custom training script (optional)
-├── predict.py # Inference script
-├── requirements.txt # Project dependencies
-├── Dockerfile # For containerization (optional)
-├── README.md # Project documentation
-└── app/ # Web app folder (Streamlit or Flask)
+├── app.py                   # Main Flask app
+├── cellSegmentation/        # Model training logic and pipeline
+├── research/                # Data ingestion and validation scripts
+├── templates/               # HTML files for web UI
+├── data/                    # Input dataset (unzipped from data.zip)
+├── runs/segment/            # YOLOv8 training results
+├── requirements.txt         # Python dependencies
+├── Dockerfile               # Docker configuration
+├── setup.py                 # Package metadata
+├── LICENSE                  # MIT License
+└── README.md                # Project documentation
 
+
+---
+
+## 📦 Installation
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/End-To-End-Cell-Segmentation-YOLOv8.git
+cd End-To-End-Cell-Segmentation-YOLOv8
+```
+
+
+### 2. Create a Virtual Environment
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+### 3. Install Required Packages
+```bash
+pip install -r requirements.txt
+```
+## 🧬 Dataset Format
+
+Your dataset must follow **YOLOv8 segmentation format**:
+
+- Images in: `data/images/`
+- Labels in: `data/labels/`
+- Each `.txt` file contains polygon coordinates:
+
+```txt
+class_id x1 y1 x2 y2 ... xn yn
+```
+## 🔬 Applications
+
+- Biomedical image analysis  
+- Automated cell counting  
+- Drug response analysis  
+- Cancer research  
+- Histopathological image processing  
+
+---
+
+## 📌 Future Enhancements
+
+-  Post-processing with morphological filters  
+-  Annotation tool integration (Label Studio, CVAT)  
+-  Model optimization (ONNX, TensorRT)  
+-  3D segmentation support  
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License**.  
+See the [LICENSE](LICENSE) file for more details.
+
+---
+
+## 👨‍💻 Author
+
+**Rushikesh Gaikhe**  
+🔗 [LinkedIn](https://www.linkedin.com/in/rushikesh-gaikhe)  
+🐙 [GitHub](https://github.com/rushikeshgaikhe)
